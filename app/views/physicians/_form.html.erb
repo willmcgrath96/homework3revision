@@ -22,8 +22,8 @@
   </div>
 
   <div id='office locations'>
-    <%= form.fields_for :office_locations do |task| %>
-      <%= render 'office_location_fields', :f => task %>
+    <%= form.fields_for :office_locations do |office_location| %>
+      <%= render 'office_location_fields', :f => office_location %>
     <% end %>
     <div class='links'>
       <%= link_to_add_association 'Add Office Location', form, :office_locations %>

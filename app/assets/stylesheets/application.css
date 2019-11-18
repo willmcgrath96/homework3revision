@@ -16,7 +16,56 @@
 
 header{
     margin-bottom: 3em;
-    background-color: #a7a8a2;
-    border-radius: 5px;
-    padding: 1.5em 0;
+    background-color: #cacbc5;
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    font-size: 13px;
+    font-family: arial;
+}
+
+h1{
+    font-family: arial;
+}
+
+#office_table, #office_table tr, #office_table td{
+    border: 1px solid black;
+    table-layout: auto;
+    width: 1800px;
+    font-family: arial;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#appointment_table, #appointment_table tr, #appointment_table td{
+    border: 1px solid black;
+    table-layout: auto;
+    width: 1800px;
+    font-family: arial;
+    text-align: left;
+}
+
+#appointment_table tr:nth-child(even){
+     background-color: #9ad6cc;
+ }
+
+#appointment_table tr:nth-child(odd){
+    background-color: #d5d6d0;
+}
+
+#office_table tr:nth-child(even){
+    background-color: #9ad6cc;
+}
+
+#office_table tr:nth-child(odd){
+    background-color: #d5d6d0;
+}
+
+strong{
+    font-family: arial;
+    font-size: 16px;
+}
+
+#physname{
+    font-size:20px;
 }

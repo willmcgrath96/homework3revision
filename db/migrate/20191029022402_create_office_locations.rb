@@ -4,7 +4,7 @@ class CreateOfficeLocations < ActiveRecord::Migration[6.0]
       t.string :street_address
       t.string :zip
       t.string :phone
-      t.references :physician, null: false, foreign_key: true
+      t.references :physician, null: false, foreign_key: {on_delete: :cascade}
 
       t.timestamps
     end

@@ -15,7 +15,7 @@
   <tbody>
     <% @appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.visit %></td>
+        <td><%= appointment.visit.strftime("%B #{appointment.visit.day.ordinalize}, %Y %k:%M") %></td>
         <td><%= appointment.physician.name %></td>
         <td><%= appointment.patient.name %></td>
         <td><%= link_to 'Show', appointment %></td>

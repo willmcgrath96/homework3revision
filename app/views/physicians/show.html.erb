@@ -1,13 +1,49 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @physician.name %>
+  <strong id="physname"><%= @physician.name %></strong>
 </p>
 
 <p>
   <strong>Specialty:</strong>
+  <strong>
   <%= @physician.specialty %>
+  </strong>
+</p>
+
+<p>
+  <strong>Office Location:</strong>
+  <div id="office_table">
+  <table>
+    <tr>
+      <th>Street Address</th>
+      <th>Zip Code</th>
+      <th>Phone</th>
+    </tr>
+    <% @physician.office_locations.each do |office_locations| %>
+     <tr>
+       <td><%= office_locations.street_address %></td>
+       <td><%= office_locations.zip %></td>
+       <td><%= office_locations.phone %></td>
+       <% end %>
+     </tr>
+  </table>
+  </div>
+  <strong id="appointments">Current Appointments:</strong>
+  <div id="appointment_table">
+    <table>
+      <tr>
+        <th>Patient Name</th>
+        <th>Date of Appointment</th>
+      </tr>
+      <% @physician.appointments.each do |appointments| %>
+      <tr>
+        <td><%= appointments.patient.name %></td>
+        <td><%= appointments.visit.strftime("%B #{appointments.visit.day.ordinalize}, %Y %k:%M") %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_physician_path(@physician) %> |
